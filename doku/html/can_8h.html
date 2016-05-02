@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>RCA CAN Library: can.h-Dateireferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="modules.html"><span>Module</span></a></li>
+      <li><a href="annotated.html"><span>Datenstrukturen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>can.h-Dateireferenz</h1>Header-Datei für das allgemeine CAN Interface. <a href="#_details">Mehr ...</a>
+<p>
+<code>#include &lt;avr/pgmspace.h&gt;</code><br>
+<code>#include &lt;stdint.h&gt;</code><br>
+<code>#include &lt;stdbool.h&gt;</code><br>
+<code>#include &quot;config.h&quot;</code><br>
+
+<p>
+<div class="dynheader">
+Include-Abhängigkeitsdiagramm für can.h:</div>
+<div class="dynsection">
+<p><center><img src="can_8h__incl.png" border="0" usemap="#can.h_map" alt=""></center>
+</div>
+
+<p>
+<a href="can_8h-source.html">gehe zum Quellcode dieser Datei</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Datenstrukturen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcan__t.html">can_t</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Datenstruktur zum Aufnehmen von CAN Nachrichten.  <a href="structcan__t.html#_details">Mehr ...</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcan__filter__t.html">can_filter_t</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Datenstruktur zur Aufnahme von CAN-Filtern.  <a href="structcan__filter__t.html#_details">Mehr ...</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcan__error__register__t.html">can_error_register_t</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inhalt der Fehler-Register.  <a href="structcan__error__register__t.html#_details">Mehr ...</a><br></td></tr>
+<tr><td colspan="2"><br><h2>Makrodefinitionen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="g0c107bf106e5097ee208985008c9c112"></a><!-- doxytag: member="can.h::CAN_ALL_FILTER" ref="g0c107bf106e5097ee208985008c9c112" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g0c107bf106e5097ee208985008c9c112">CAN_ALL_FILTER</a>&nbsp;&nbsp;&nbsp;0xff</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Symbol um auf alle Filter zuzugreifen. <br></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Bitdefinitionen</div></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="2bf0df6def4127052a5ba192e7f5e226"></a><!-- doxytag: member="can.h::ONLY_NON_RTR" ref="2bf0df6def4127052a5ba192e7f5e226" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ONLY_NON_RTR</b>&nbsp;&nbsp;&nbsp;2</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="2ae9ebf1705c9e6df60ac6e198a8f5f2"></a><!-- doxytag: member="can.h::ONLY_RTR" ref="2ae9ebf1705c9e6df60ac6e198a8f5f2" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ONLY_RTR</b>&nbsp;&nbsp;&nbsp;3</td></tr>
+
+<tr><td colspan="2"><div class="groupHeader">Bits des Filters fuer den MCP2515 umformatieren</div></td></tr>
+<tr><td colspan="2"><div class="groupText">Unterstuetzung fuer Extended-IDs aktivieren<p>
+Unterstützung für Zeitstempel aktivieren <dl class="warning" compact><dt><b>Warnung:</b></dt><dd>Wird nur vom AT90CANxxx unterstützt</dd></dl>
+<div class="fragment"><pre class="fragment">  prog_uint8_t can_filter[] =
+  {
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Filter 0</span>
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Filter 1</span>
+
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Filter 2</span>
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Filter 3</span>
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Filter 4</span>
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Filter 5</span>
+
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Maske 0</span>
+    MCP2515_FILTER_EXTENDED(0), <span class="comment">// Maske 1</span>
+  };
+</pre></div><p>
+<dl class="see" compact><dt><b>Siehe auch:</b></dt><dd><a class="el" href="group__can__interface.html#g1a525dac710bc2650bb2d9939f287923" title="Setzt die Werte für alle Filter.">can_static_filter()</a></dd></dl>
+<dl class="warning" compact><dt><b>Warnung:</b></dt><dd>Dieses Makro sollte nur Werte verwendet die schon zur Compile-Zeit bekannt sind. Der Code sollte ansonsten zwar trotzdem funktionieren, wird danner aber sehr groß. </dd></dl>
+<br><br></div></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a2283739fcfd04a2cf32a485605c2279"></a><!-- doxytag: member="can.h::MCP2515_FILTER_EXTENDED" ref="a2283739fcfd04a2cf32a485605c2279" args="(id)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MCP2515_FILTER_EXTENDED</b>(id)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4e9b29113bbe63888ef94d25203e1bc0"></a><!-- doxytag: member="can.h::MCP2515_FILTER" ref="4e9b29113bbe63888ef94d25203e1bc0" args="(id)" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>MCP2515_FILTER</b>(id)</td></tr>
+
+<tr><td colspan="2"><br><h2>Aufzählungen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g1085b545b19ee92abad774ad27eec8d7">can_bitrate_t</a> { <br>
+&nbsp;&nbsp;<b>BITRATE_10_KBPS</b> =  0,
+<b>BITRATE_20_KBPS</b> =  1,
+<b>BITRATE_50_KBPS</b> =  2,
+<b>BITRATE_100_KBPS</b> =  3,
+<br>
+&nbsp;&nbsp;<b>BITRATE_125_KBPS</b> =  4,
+<b>BITRATE_250_KBPS</b> =  5,
+<b>BITRATE_500_KBPS</b> =  6,
+<b>BITRATE_1_MBPS</b> =  7
+<br>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Bitraten fuer den CAN-Bus. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#gd6f5bfd4c152b830a94c2066e9c81710">can_mode_t</a> { <a class="el" href="group__can__interface.html#ggd6f5bfd4c152b830a94c2066e9c81710581130e49bf3be40cabb563b0fee8fc4">LISTEN_ONLY_MODE</a>,
+<a class="el" href="group__can__interface.html#ggd6f5bfd4c152b830a94c2066e9c81710187b2d7634d602c4f41d4a92b02c4b8f">LOOPBACK_MODE</a>,
+<a class="el" href="group__can__interface.html#ggd6f5bfd4c152b830a94c2066e9c8171083feb61d42f8db9f494019fcea2c0148">NORMAL_MODE</a>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modus des CAN Interfaces.  <a href="group__can__interface.html#gd6f5bfd4c152b830a94c2066e9c81710">Mehr ...</a><br></td></tr>
+<tr><td colspan="2"><br><h2>Funktionen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#gbd1f48e60b6607452b92d08cca69e882">can_init</a> (<a class="el" href="group__can__interface.html#g1085b545b19ee92abad774ad27eec8d7">can_bitrate_t</a> bitrate)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialisierung des CAN Interfaces.  <a href="group__can__interface.html#gbd1f48e60b6607452b92d08cca69e882"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#gf6ee58a439c848efb779306f0d84f87d">can_set_filter</a> (uint8_t number, const <a class="el" href="structcan__filter__t.html">can_filter_t</a> *filter)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzen eines Filters.  <a href="group__can__interface.html#gf6ee58a439c848efb779306f0d84f87d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g481f4fb1ea636415efc618e4e7f40989">can_disable_filter</a> (uint8_t number)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Filter deaktivieren.  <a href="group__can__interface.html#g481f4fb1ea636415efc618e4e7f40989"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g1a525dac710bc2650bb2d9939f287923">can_static_filter</a> (const prog_uint8_t *filter_array)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt die Werte für alle Filter.  <a href="group__can__interface.html#g1a525dac710bc2650bb2d9939f287923"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g16d0640bef61ef76d8bd4c6274c6cdaa">can_get_filter</a> (uint8_t number, <a class="el" href="structcan__filter__t.html">can_filter_t</a> *filter)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Filterdaten auslesen.  <a href="group__can__interface.html#g16d0640bef61ef76d8bd4c6274c6cdaa"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#gea4af1845c4128b901e6b5190f154f02">can_check_message</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ueberpruefen ob neue CAN Nachrichten vorhanden sind.  <a href="group__can__interface.html#gea4af1845c4128b901e6b5190f154f02"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g645382c1488d16b75b6721a476ac0836">can_check_free_buffer</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ueberprueft ob ein Puffer zum Versenden einer Nachricht frei ist.  <a href="group__can__interface.html#g645382c1488d16b75b6721a476ac0836"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#ge3f7b241d087aaa78feb98452ae320d5">can_send_message</a> (const <a class="el" href="structcan__t.html">can_t</a> *msg)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verschickt eine Nachricht über den CAN Bus.  <a href="group__can__interface.html#ge3f7b241d087aaa78feb98452ae320d5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g93c3e6ad5e58dc208cd1ccce45f4fe97">can_get_message</a> (<a class="el" href="structcan__t.html">can_t</a> *msg)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liest eine Nachricht aus den Empfangspuffern des CAN Controllers.  <a href="group__can__interface.html#g93c3e6ad5e58dc208cd1ccce45f4fe97"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="gb163a825c6dc771bfd910dd1566c6709"></a><!-- doxytag: member="can.h::can_read_error_register" ref="gb163a825c6dc771bfd910dd1566c6709" args="(void)" -->
+<a class="el" href="structcan__error__register__t.html">can_error_register_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#gb163a825c6dc771bfd910dd1566c6709">can_read_error_register</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liest den Inhalt der Fehler-Register. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g789249cd7bf03abf1112e66dc31c6a6b">can_check_bus_off</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Überprüft ob der CAN Controller im Bus-Off-Status.  <a href="group__can__interface.html#g789249cd7bf03abf1112e66dc31c6a6b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g9dd5adf15a4a0421c45840443e720ee3">can_reset_bus_off</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt einen Bus-Off Status zurück und schaltet den CAN Controller wieder aktiv.  <a href="group__can__interface.html#g9dd5adf15a4a0421c45840443e720ee3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__can__interface.html#g08711a36cb70dc71c761ed01f7cbf8c8">can_set_mode</a> (<a class="el" href="group__can__interface.html#gd6f5bfd4c152b830a94c2066e9c81710">can_mode_t</a> mode)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt den Operations-Modus.  <a href="group__can__interface.html#g08711a36cb70dc71c761ed01f7cbf8c8"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Header-Datei für das allgemeine CAN Interface.
+<p>
+
+<p>Definiert in Datei <a class="el" href="can_8h-source.html">can.h</a>.</p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Erzeugt am Tue Jan 6 15:41:35 2009 für RCA CAN Library von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>
