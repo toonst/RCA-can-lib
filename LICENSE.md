@@ -1,4 +1,4 @@
-Copyright (c) 2008, Roboterclub Aachen e.V.
+Copyright (c) 2007 Fabian Greif, Roboterclub Aachen e.V.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
